@@ -5,7 +5,6 @@ plugins:
   - name: prometheus
     config:
       per_consumer: true
-services:
 - name: echo-service
   path: /
   host: echo.kic.svc.cluster.local
