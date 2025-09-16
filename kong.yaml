@@ -1,6 +1,10 @@
 _format_version: "3.0"
 _konnect:
   control_plane_name: hackathon
+plugins:
+  - name: prometheus
+    config:
+      per_consumer: true
 services:
 - name: echo-service
   path: /
