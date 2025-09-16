@@ -10,6 +10,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          path: source
       - uses: kong/setup-deck@v1
       - run: deck version
-      - run: deck gateway sync *.yaml --konnect-token=${{ secrets.KONNECT_TOKEN }} --konnect-addr=https://eu.api.konghq.com
+      - run: deck gateway sync source/*.yaml --konnect-token=${{ secrets.KONNECT_TOKEN }} --konnect-addr=https://eu.api.konghq.com
