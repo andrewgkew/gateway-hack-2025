@@ -13,5 +13,5 @@ jobs:
         with:
           path: source
       - uses: kong/setup-deck@v1
-      - run: deck file lint -s source/*.yaml; echo $?
+      - run: deck file lint -s source/kong.yaml; echo $?
       - run: deck gateway validate --konnect-compatibility source/*.yaml --konnect-token=${{ secrets.KONNECT_TOKEN }} --konnect-addr=https://eu.api.konghq.com
