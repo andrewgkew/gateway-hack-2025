@@ -7,6 +7,7 @@ plugins:
       per_consumer: true
       - name: request-termination
   - name: request-termination
+  status_code: 503
     config:
       status_code: 503
       message: '"Service is now unavailable"'
