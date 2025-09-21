@@ -7,7 +7,6 @@ plugins:
       per_consumer: true
     config:
       message: '"Service is now unavailable"'
-services:
   - name: echo-service
     path: /
     host: echo.kic.svc.cluster.local
