@@ -19,5 +19,6 @@ services:
       - name: echo-route
         methods:
           - GET
+          - POST
         paths:
           - /echo
