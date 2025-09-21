@@ -5,15 +5,19 @@ plugins:
   - name: prometheus
     config:
       per_consumer: true
+  - name: request-termination
+    config:
+      status_code: 503
+      message: '"Service is now unavailable"'
 services:
-- name: echo-service
-  path: /
-  host: echo.kic.svc.cluster.local
-  port: 1027
-  protocol: http
-  routes:
-    - name: echo-route
-      methods:
-        - GET
-      paths:
-        - /echo
+  - name: echo-service
+    path: /
+    host: echo.kic.svc.cluster.local
+    port: 1027
+    protocol: http
+    routes:
+      - name: echo-route
+        methods:
+          - GET
+        paths:
+          - /echo
