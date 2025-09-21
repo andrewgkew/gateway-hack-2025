@@ -8,16 +8,6 @@ on:
       - main
 
 jobs:
-  debug-event:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show event name
-        run: echo "Event: ${{ github.event_name }}"
-      - name: Show if merged flag is present
-        run: echo "Merged? ${{ github.event.pull_request.merged }}"
-      - name: Dump full event payload
-        run: echo '${{ toJson(github.event) }}'
-
   deploy-kong-config:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
